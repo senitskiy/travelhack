@@ -22,12 +22,18 @@ export const Auth = () => {
     e.preventDefault()
 
     const response = await fetch(`${API_URL}/auth`, POST_CONFIG(formData))
+
+    console.log(response)
+    console.log(API_URL)
+    console.log('formData:'+ formData)
+    console.log(setFormData)
     const body = await response.text()
+    console.log(body)
+    
+    // const parseBody = JSON.parse(formData)//body)
+    // const auth = parseBody.response.data.auth
 
-    const parseBody = JSON.parse(body)
-    const auth = parseBody.response.data.auth
-
-    setSuccessAuth(auth)
+    // setSuccessAuth(auth)
 
   }
 

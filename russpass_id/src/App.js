@@ -25,9 +25,10 @@ const App = () => {
       }, [token])
 
       const body = await response.text()
-      const parseBody = JSON.parse(body)
+      console.log('body:'+body)
+      // const parseBody = JSON.parse(body)
 
-      setAuth(parseBody.response.data.auth)
+      // setAuth(parseBody.response.data.auth)
     }
 
     fetchData()

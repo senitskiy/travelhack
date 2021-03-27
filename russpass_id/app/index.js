@@ -48,16 +48,16 @@ app.use(bodyParser.urlencoded({
 
 require('./authentication').init(app)
 
-app.use(session(
-  {
-  store: new RedisStore({
-    url: config.redisStore.url
-  }),
-  secret: config.redisStore.secret,
-  resave: false,
-  saveUninitialized: false
-}
-))
+// app.use(session(
+//   {
+//   store: new RedisStore({
+//     url: config.redisStore.url
+//   }),
+//   secret: config.redisStore.secret,
+//   resave: false,
+//   saveUninitialized: false
+// }
+// ))
 
 app.use(passport.initialize())
 app.use(passport.session())
