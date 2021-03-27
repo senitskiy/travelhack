@@ -16,7 +16,7 @@ export const Choise = ({ token, auth }) => {
         <div>
             <div onClick={handleSubmit}>
                 <div>{auth.login}</div>
-                <div>{auth.mail}</div>
+                <div>{auth.email}</div>
             </div>
             <div>
                 <Link to={`/identifier${window.location.search}`}>Сменить аккаунт</Link>

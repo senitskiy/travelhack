@@ -27,7 +27,7 @@ app.post('/auth', (req, res) => {
             data: {
                 auth: {
                     login: 'Пользователь Пользовательский',
-                    mail: 'test@test.test'
+                    email: 'test@test.test'
                 }
             }
         }
@@ -35,6 +35,17 @@ app.post('/auth', (req, res) => {
 })
 
 app.post('/confirmation', (req, res) => {
+    return res.json({
+        status: 200,
+        response: {
+            data: {
+                token: 'token token'
+            }
+        }
+    });
+})
+
+app.post('/registration', (req, res) => {
     return res.json({
         status: 200,
         response: {

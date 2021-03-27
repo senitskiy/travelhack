@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import { API_URL } from './constants'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Auth, Choise } from './pages/index'
+import { Auth, Choise, Registration } from './pages/index'
 
 import './App.css'
 
@@ -11,7 +11,7 @@ const App = () => {
   const token = useMemo(() => localStorage.getItem('token'), [])
 
   const [auth, setAuth] = useState(() => {
-    return { login: '', mail: '' }
+    return { login: '', email: '' }
   })
 
   useEffect(() => {
@@ -43,8 +43,11 @@ const App = () => {
             <Auth />
           }
         </Route>
-        <Route exact path="/identifier">
+        <Route path="/identifier">
           <Auth />
+        </Route>
+        <Route path="/registration">
+          <Registration />
         </Route>
       </Switch>
     </BrowserRouter>
