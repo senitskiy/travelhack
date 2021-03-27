@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'rp-red': '#FF3000',
+        'rp-red-hover': '#DD2A00',
+        'rp-red-focus': '#BE2602',
         'rp-text': '#262626',
         'rp-text-muted': '#898989',
         'rp-light-gray': '#F0F0F0',

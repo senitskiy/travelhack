@@ -65,8 +65,7 @@ export const Auth = () => {
 
     return (
         <div className="App">
-      Форма авторизации
-      
+        <div className="text-2xl leading-10 mb-6">Войти с RUSSPASS ID</div>
         {successAuth ?
           <form onSubmit={handleChecboxSubmit}>
           <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox1} name="checkbox1" label="Чекбокс 1" />
@@ -76,9 +75,18 @@ export const Auth = () => {
         </form>
         :
         <form onSubmit={successAuth ? handleChecboxSubmit : handleSubmit}>
-          <Input type="text" onChange={handleChange} value={formData.login} name="login" label="Логин" />
-          <Input type="password" onChange={handleChange} value={formData.password} name="password" label="Пароль" />
-          <Button type="submit" label="Авторизоваться" />
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="login" label="Логин"/>
+          <Input theme="mb-2" type="password" onChange={handleChange} value={formData.password} name="password" label="Пароль"/>
+          <div className="mb-6">
+          <a href="#" className="text-sm underline leading-5">Не помню пароль</a>
+          </div>
+          <div className="mb-4">
+          <button className="py-3.5 px-8 border border-rp-input-border rounded hover:bg-rp-light-gray focus:rp-red-focus rounded-lg">Войти по номеру телефона</button>
+          </div>
+          <div className="mb-4">
+          <Button type="submit" label="Войти" />
+          </div>
+          {/* <Button type="submit" label="Вотйи по номеру телефона" /> */}
         </form>
         }
     </div>

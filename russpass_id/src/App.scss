@@ -1,9 +1,15 @@
 body {
-  font-family: 'GolosTextWebMedium'
+  font-family: 'GolosTextWebMedium';
+  font-size: 16px;
+}
+
+html,
+body {
+  @apply h-full;
 }
 
 .App {
-  text-align: center;
+  // text-align: center;
 }
 
 .App-logo {
@@ -39,4 +45,34 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+#root {
+  @apply h-full;
+}
+
+.grid-wrapper {
+  @apply min-h-full;
+  @apply flex;
+
+
+  .grid-left-side {
+    width: 35%;
+    background-color: gray;
+  }
+
+  .auth-container {
+    width: 100%;
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .auth-content {
+    margin-left: 25%;
+    padding-top: 120px;
+  }
+  .auth-form-wrapper {
+    max-width: 384px;
+  } 
 }

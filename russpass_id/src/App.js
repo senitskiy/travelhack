@@ -34,24 +34,34 @@ const App = () => {
   }, [token])
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          {Boolean(token && auth.mail) ?
-            <Choise auth={auth} token={token} />
-            :
+    <div className="grid-wrapper">
+      <div className="grid-left-side">
+
+      </div>
+      <div className="auth-container"> 
+      <div className="auth-content">
+      <div className="auth-form-wrapper">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            {Boolean(token && auth.mail) ?
+              <Choise auth={auth} token={token} />
+              :
+              <Auth />
+            }
+          </Route>
+          <Route path="/identifier">
             <Auth />
-          }
-        </Route>
-        <Route path="/identifier">
-          <Auth />
-        </Route>
-        <Route path="/registration">
-          <Registration />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  )
+          </Route>
+          <Route path="/registration">
+            <Registration />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      </div>
+      </div>
+      </div>
+    </div>)
 }
 
 export default App
