@@ -1,87 +1,54 @@
-import { useState, useMemo } from 'react'
-import { Input, Button, Checkbox } from './components'
-import {API_URL, POST_CONFIG} from './constants'
+import { useEffect, useMemo, useState } from 'react'
+
+import { API_URL } from './constants'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Auth, Choise } from './pages/index'
 
 import './App.css'
 
 const App = () => {
 
-  const callbackUrl = useMemo(() => {
-    return new URLSearchParams(window.location.search).get('callback')
-  }, [])
+  const token = useMemo(() => localStorage.getItem('token'), [])
 
-  const [formData, setFormData] = useState({
-    label: '',
-    password: ''
+  const [auth, setAuth] = useState(() => {
+    return { login: '', mail: '' }
   })
 
-  const [checkboxes, setCheckboxes] = useState({
-    checkbox1: false,
-    checkbox2: false,
-    checkbox3: false,
-  })
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${API_URL}/auth`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token }),
+      }, [token])
 
-  const [successAuth, setSuccessAuth] = useState(false)
-
-  const handleChecboxSubmit = async e => {
-      e.preventDefault()
-  
-      const response = await fetch(`${API_URL}/confirmation`, POST_CONFIG(checkboxes))
       const body = await response.text()
       const parseBody = JSON.parse(body)
-      const {token} = parseBody.response.data
-      
-      window.location.replace(`${callbackUrl}?code=${token}`) 
-  }
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+      setAuth(parseBody.response.data.auth)
+    }
 
-    const response = await fetch(`${API_URL}/auth`, POST_CONFIG(formData))
-    const body = await response.text()
-    
-    setSuccessAuth(Boolean(body))
-
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-
-    setFormData({
-      ...formData,
-      [name]: value
-    })
-  }
-
-  const handleCheckboxChange = (e) => {
-    const { name, value } = e.target
-
-    setCheckboxes({
-      ...checkboxes,
-      [name]: !value
-    })
-  }  
+    fetchData()
+  }, [token])
 
   return (
-    <div className="App">
-      Форма авторизации
-      
-        {successAuth ?
-          <form onSubmit={handleChecboxSubmit}>
-          <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox1} name="checkbox1" label="Чекбокс 1" />
-          <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox2} name="checkbox1" label="Чекбокс 2" />
-          <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox3} name="checkbox1" label="Чекбокс 3" />
-          <Button type="submit" label="Подтвердить" />
-        </form>
-        :
-        <form onSubmit={successAuth ? handleChecboxSubmit : handleSubmit}>
-          <Input type="text" onChange={handleChange} value={formData.login} name="login" label="Логин" />
-          <Input type="password" onChange={handleChange} value={formData.password} name="password" label="Пароль" />
-          <Button type="submit" label="Авторизоваться" />
-        </form>
-        }
-    </div>
-  );
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          {Boolean(token && auth.mail) ?
+            <Choise auth={auth} token={token} />
+            :
+            <Auth />
+          }
+        </Route>
+        <Route exact path="/identifier">
+          <Auth />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App
