@@ -19,13 +19,14 @@
   },
   "homepage": "https://github.com/RisingStack/nodehero-authentication#readme",
   "dependencies": {
-    "bcrypt": "1.0.2",
-    "body-parser": "1.15.1",
-    "connect-redis": "3.0.2",
-    "express": "4.13.4",
-    "express-handlebars": "3.0.0",
-    "express-session": "1.13.0",
-    "passport": "0.3.2",
-    "passport-local": "1.0.0"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.15.1",
+    "connect-redis": "^3.4.2",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.13.0",
+    "node-pre-gyp": "^0.17.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }
