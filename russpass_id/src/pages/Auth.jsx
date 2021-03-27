@@ -68,8 +68,8 @@ export const Auth = () => {
       {successAuth ?
         <Fragment>
 
-          <div className="text-2xl leading-10 mb-6">Это вы?</div>
-          <div className="border border-rp-input-border rounded-xl mb-3">
+          <div className="text-2xl leading-10 mb-6">Подтверждение номера</div>
+          <div className="border border-rp-input-border rounded-xl mb-2">
             <div className="p-3">
               <div className="flex items-center">
                 <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
@@ -88,7 +88,7 @@ export const Auth = () => {
           </div>
           <Input theme="mb-2" type="text" onChange={handleChange} value={formData.login} name="smsPassword" label="Пароль из смс" />
           <div className="mb-4">
-            <a href="#" className="text-sm underline leading-5">Пароль не приходит</a>
+            <a href="#" className="text-sm underline leading-5">Отправить пароль еще раз</a>
           </div>
           <Button theme="w-full bg-rp-red text-white hover:bg-rp-red-hover focus:rp-red-focus" type="submit" label="Продолжить" />
 
@@ -112,7 +112,7 @@ export const Auth = () => {
             </div>
             <div className="leading-snug">Александр<br></br>Александров</div>
           </div>
-          <div className="mb-4">
+          <div className="mb-2">
             <p>Сайту sitename.com будут доступны следующие данные:</p>
           </div>
           <form onSubmit={handleChecboxSubmit}>
