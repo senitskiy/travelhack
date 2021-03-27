@@ -2,43 +2,43 @@
 /* Font Golos Text: Copyright ? ParaType, 2018. All rights reserved.*/
 
 @font-face {
-	font-family: 'GolosTextWebBlack';
+	font-family: 'GolosTextWeb';
 	src:
 		url('fonts/Golos-Text/Golos-Text_Black.woff2') format('woff2'),
 		url('fonts/Golos-Text/Golos-Text_Black.woff') format('woff');
-	font-weight: normal;
+	font-weight: 800;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'GolosTextWebBold';
+	font-family: 'GolosTextWeb';
 	src:
 		url('fonts/Golos-Text/Golos-Text_Bold.woff2') format('woff2'),
 		url('fonts/Golos-Text/Golos-Text_Bold.woff') format('woff');
-	font-weight: normal;
+	font-weight: 700;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'GolosTextWebDemiBold';
+	font-family: 'GolosTextWeb';
 	src:
 		url('fonts/Golos-Text/Golos-Text_DemiBold.woff2') format('woff2'),
 		url('fonts/Golos-Text/Golos-Text_DemiBold.woff') format('woff');
-	font-weight: normal;
+	font-weight: 600;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'GolosTextWebMedium';
+	font-family: 'GolosTextWeb';
 	src:
 		url('fonts/Golos-Text/Golos-Text_Medium.woff2') format('woff2'),
 		url('fonts/Golos-Text/Golos-Text_Medium.woff') format('woff');
-	font-weight: normal;
+	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'GolosTextWebRegular';
+	font-family: 'GolosTextWeb';
 	src:
 		url('fonts/Golos-Text/Golos-Text_Regular.woff2') format('woff2'),
 		url('fonts/Golos-Text/Golos-Text_Regular.woff') format('woff');
