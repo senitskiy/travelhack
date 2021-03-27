@@ -25,7 +25,32 @@ app.post('/auth', (req, res) => {
         status: 200,
         response: {
             data: {
-                name: 'Пользователь Пользовательский'
+                auth: {
+                    login: 'Пользователь Пользовательский',
+                    email: 'test@test.test'
+                }
+            }
+        }
+    });
+})
+
+app.post('/confirmation', (req, res) => {
+    return res.json({
+        status: 200,
+        response: {
+            data: {
+                token: 'token token'
+            }
+        }
+    });
+})
+
+app.post('/registration', (req, res) => {
+    return res.json({
+        status: 200,
+        response: {
+            data: {
+                token: 'token token'
             }
         }
     });
