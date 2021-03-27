@@ -4,7 +4,7 @@ import { API_URL } from './constants'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Auth, Choise, Registration } from './pages/index'
 
-import './App.css'
+import './App.scss'
 
 const App = () => {
 
