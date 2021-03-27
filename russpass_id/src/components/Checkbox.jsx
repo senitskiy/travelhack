@@ -1,3 +1,5 @@
+import './checkbox.scss'
+
 export const Checkbox = (props) => {
     const { value, label, name, onChange } = props
 
