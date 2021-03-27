@@ -6,7 +6,7 @@ export const Input = (props) => {
     return (
         <div className={`form-group text-left flex flex-col ${theme}`}>
             <label className="mb-3 font-medium">{label}</label>
-            <div class="form-group">
+            <div className="form-group">
                 <input id={name} name={name} onChange={onChange} value={value} type={type} className="py-3 px-4 border rounded-lg border-rp-input-border outline-none box-border ocus:border-2 w-full" />
             </div>
         </div>

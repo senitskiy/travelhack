@@ -72,7 +72,7 @@ export const Auth = () => {
           <div className="border border-rp-input-border rounded-xl mb-3">
             <div className="p-3">
               <div className="flex items-center">
-                <div className="rounded rounded-full h-14 w-14 bg-rp-text flex items-center justify-center mr-4">
+                <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
                   <div className="text-3xl leading-none font-medium text-white">A</div>
                 </div>
                 <div className="leading-snug">Александр<br></br>Александров</div>
@@ -95,7 +95,7 @@ export const Auth = () => {
 
           <div className="text-2xl leading-10 mb-6">Это вы?</div>
           <div className="mb-4 flex items-center">
-            <div className="rounded rounded-full h-14 w-14 bg-rp-text flex items-center justify-center mr-4">
+            <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
               <div className="text-3xl leading-none font-medium text-white">A</div>
             </div>
             <div className="leading-snug">Александр<br></br>Александров</div>
@@ -107,7 +107,7 @@ export const Auth = () => {
 
           <div className="text-2xl leading-10 mb-6">Доступ к данным</div>
           <div className="mb-4 flex items-center">
-            <div className="rounded rounded-full h-14 w-14 bg-rp-text flex items-center justify-center mr-4">
+            <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
               <div className="text-3xl leading-none font-medium text-white">A</div>
             </div>
             <div className="leading-snug">Александр<br></br>Александров</div>
@@ -120,7 +120,7 @@ export const Auth = () => {
             <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox1} name="checkbox2" label="Адрес электронной почты" />
             <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox2} name="checkbox3" label="Телефон" />
             <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox3} name="checkbox4" label="Паспортные данные" />
-            <div class="mb-6"></div>
+            <div className="mb-6"></div>
             <Button theme="w-full bg-rp-red text-white hover:bg-rp-red-hover focus:rp-red-focus" type="submit" label="Продолжить" />
           </form>
         </Fragment>
@@ -139,7 +139,7 @@ export const Auth = () => {
             <div className="mb-4">
               <Button theme="w-full border border-rp-input-border hover:bg-rp-light-gray " type="submit" label="Войти по номеру телефона" />
             </div>
-            <div class="text-center">У вас нет аккаунта? <a href="#" className="underline">Зарегистрируйтесь</a></div>
+            <div className="text-center">У вас нет аккаунта? <a href="#" className="underline">Зарегистрируйтесь</a></div>
 
           </form>
         </Fragment>
