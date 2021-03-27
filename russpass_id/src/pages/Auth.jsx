@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import {API_URL, POST_CONFIG} from '../constants'
 import { Input, Button, Checkbox } from '../components'
-import './auth.css'
+import './auth.scss'
 
 
 export const Auth = () => {

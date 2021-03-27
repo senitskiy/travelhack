@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { API_URL } from '../constants'
 import { Input, Button } from '../components'
-import './auth.css'
+import './registration.scss'
 
 export const Registration = () => {
 

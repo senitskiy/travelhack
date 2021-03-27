@@ -1,4 +1,4 @@
-import './confirmation.css';
+import './confirmation.scss';
 
 export const Confirmation = () => {
 
