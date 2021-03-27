@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom'
-import './choise.css';
+import './choise.scss';
 
 export const Choise = ({ token, auth }) => {
 
@@ -16,7 +16,7 @@ export const Choise = ({ token, auth }) => {
         <div>
             <div onClick={handleSubmit}>
                 <div>{auth.login}</div>
-                <div>{auth.email}</div>
+                <div>{auth.emailw}</div>
             </div>
             <div>
                 <Link to={`/identifier${window.location.search}`}>Сменить аккаунт</Link>

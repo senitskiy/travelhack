@@ -1,4 +1,4 @@
-import './callback.css';
+import './callback.scss';
 
 export const Order = () => {
 
