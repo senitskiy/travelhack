@@ -65,6 +65,8 @@ const App = () => {
   return (
     <div className="App">
       Форма авторизации
+
+      <div className="form-container"></div> 
       
         {successAuth ?
           <form onSubmit={handleChecboxSubmit}>
