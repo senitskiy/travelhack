@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "oauth2orize": "^1.11.0"
+  }
+}
