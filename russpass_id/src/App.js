@@ -43,9 +43,6 @@ const App = () => {
             <Auth />
           }
         </Route>
-        <Route path="/identifier">
-          <Auth />
-        </Route>
         <Route path="/registration">
           <Registration />
         </Route>

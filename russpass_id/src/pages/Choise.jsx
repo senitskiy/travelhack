@@ -14,12 +14,16 @@ export const Choise = ({ token, auth }) => {
 
     return (
         <div>
-            <div onClick={handleSubmit}>
+            <div>Это вы?</div>
+            <div>
                 <div>{auth.login}</div>
-                <div>{auth.emailw}</div>
+                <div>{auth.email}</div>
             </div>
             <div>
-                <Link to={`/identifier${window.location.search}`}>Сменить аккаунт</Link>
+                <Link to={`/identifier${window.location.search}`}>Другая учетная запись</Link>
+            </div>
+            <div>
+                <button onClick={handleSubmit}>Да, это я</button>
             </div>
         </div>
     )
