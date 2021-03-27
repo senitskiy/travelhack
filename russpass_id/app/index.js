@@ -60,4 +60,5 @@ app.set('views', path.join(__dirname))
 require('./user').init(app)
 require('./note').init(app)
 
+
 module.exports = app

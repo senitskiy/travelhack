@@ -1,7 +1,7 @@
 const passport = require('passport')
 
 function initUser (app) {
-  app.get('/', renderWelcome)
+  // app.get('/', renderWelcome)
   app.get('/profile', passport.authenticationMiddleware(), renderProfile)
   app.post('/auth', passport.authenticate('local', {
     successRedirect: '/profile',
