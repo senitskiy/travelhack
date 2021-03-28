@@ -26,8 +26,9 @@ app.post('/auth', (req, res) => {
         response: {
             data: {
                 auth: {
-                    login: 'Пользователь Пользовательский',
-                    mail: 'test@test.test'
+                    login: 'Александр Александров',
+                    mail: 'test@test.test',
+                    token: 'auth_token'
                 }
             }
         }

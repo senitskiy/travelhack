@@ -17,8 +17,6 @@ export const PhoneInputDumb = ({ sendPhoneAction, send }) => {
         sendPhoneAction(phone)
     }
 
-    console.log('send', send)
-
     return (
         <Fragment>
             {send ?

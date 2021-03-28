@@ -11,6 +11,7 @@ const initialState = {
   data: {
     login: '',
     mail: '',
+    token: ''
   }
 }
 

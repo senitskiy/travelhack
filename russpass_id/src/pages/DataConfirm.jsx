@@ -1,13 +1,19 @@
 import { Fragment, useState, useMemo } from "react"
+import { connect } from 'react-redux'
 import { Button, Checkbox } from '../components'
 import { API_URL, POST_CONFIG } from '../constants'
 
 import './dataconfirm.scss'
 
-export const DataConfirm = () => {
+export const DataConfirmDumb = ({ auth: { login } }) => {
 
-    const callbackUrl = useMemo(() => {
-        return new URLSearchParams(window.location.search).get('callback')
+    const { callback, partner } = useMemo(() => {
+        const query = localStorage.getItem('query')
+
+        return {
+            callback: new URLSearchParams(query).get('callback'),
+            partner: new URLSearchParams(query).get('partner')
+        }
     }, [])
 
 
@@ -35,7 +41,7 @@ export const DataConfirm = () => {
         const parseBody = JSON.parse(body)
         const { token } = parseBody.response.data
 
-        window.location.replace(`${callbackUrl}?code=${token}`)
+        window.location.replace(`${callback}?code=${token}`)
     }
 
 
@@ -46,10 +52,10 @@ export const DataConfirm = () => {
                 <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
                     <div className="text-3xl leading-none font-medium text-white">A</div>
                 </div>
-                <div className="leading-snug">Александр<br></br>Александров</div>
+                <div className="leading-snug">{login}</div>
             </div>
             <div className="mb-2">
-                <p>Сайту sitename.com будут доступны следующие данные:</p>
+                <p>Сайту {partner} будут доступны следующие данные:</p>
             </div>
             <form onSubmit={handleChecboxSubmit}>
                 <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox1} name="checkbox1" label="Имя и фамилия" />
@@ -62,3 +68,11 @@ export const DataConfirm = () => {
         </Fragment>
     )
 }
+
+
+const mapStateToProps = ({ auth }) => ({
+    auth: auth.data,
+})
+
+
+export const DataConfirm = connect(mapStateToProps, null)(DataConfirmDumb)
