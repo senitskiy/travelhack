@@ -1,5 +1,5 @@
 import { Fragment, useState, useMemo } from "react"
-import { Button, Checkbox } from '../components'
+import { Button, Checkbox, UserPan } from '../components'
 import { API_URL, POST_CONFIG } from '../constants'
 
 import './dataconfirm.scss'
@@ -41,11 +41,8 @@ export const DataConfirm = () => {
     return (
         <Fragment>
             <div className="text-2xl leading-10 mb-6">Доступ к данным</div>
-            <div className="mb-4 flex items-center">
-                <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
-                    <div className="text-3xl leading-none font-medium text-white">A</div>
-                </div>
-                <div className="leading-snug">Александр<br></br>Александров</div>
+            <div className="mb-4">
+            <UserPan firstname="Александр" secondname="Александровский" email="alexandovsky@gmail.com"/>
             </div>
             <div className="mb-2">
                 <p>Сайту sitename.com будут доступны следующие данные:</p>
