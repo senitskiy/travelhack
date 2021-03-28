@@ -4,6 +4,7 @@ import './callback.scss'
 const AUTH_URL = 'http://localhost:8080/auth'
 
 export const Callback = () => {
+    const sendData = new URLSearchParams(window.location.search).get('sendData')
 
     const postCode = async () => {
         const code = new URLSearchParams(window.location.search).get('code')
@@ -22,8 +23,8 @@ export const Callback = () => {
 
         localStorage.setItem('userName', name)
 
-        window.close()
-        window.opener.location.reload()
+        // window.close()
+        window.location.replace('/order')
 
     }
 
@@ -31,7 +32,7 @@ export const Callback = () => {
 
     return (
         <div>
-            <div>Лоадер</div>
+            {sendData ? <div>Данные сохранены</div> : <div>Лоадер</div>}
         </div>
     )
 }

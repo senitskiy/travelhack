@@ -28,7 +28,9 @@ app.post('/auth', (req, res) => {
                 auth: {
                     login: 'Александр Александров',
                     mail: 'test@test.test',
-                    token: 'auth_token'
+                    token: 'auth_token',
+                    firstname: 'Александр',
+                    secondname: 'Александров'
                 }
             }
         }
@@ -46,6 +48,30 @@ app.post('/sendPhone', (req, res) => {
         }
     });
 })
+
+
+app.post('/setData', (req, res) => {
+    return res.json({
+        status: 200,
+        response: {
+            data: {
+                send: true
+            }
+        }
+    });
+})
+
+app.post('/setCheckboxes', (req, res) => {
+    return res.json({
+        status: 200,
+        response: {
+            data: {
+                send: true
+            }
+        }
+    });
+})
+
 
 app.post('/confirmation', (req, res) => {
     return res.json({

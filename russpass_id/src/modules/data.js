@@ -1,9 +1,9 @@
 import { API_URL } from '../constants'
 
-export const PHONE_INITIAL = 'phone/INITIAL'
-export const PHONE_PENDING = 'phone/PENDING'
-export const PHONE_SUCCESS = 'phone/SUCCESS'
-export const PHONE_ERROR = 'phone/ERROR'
+export const DATA_INITIAL = 'data/INITIAL'
+export const DATA_PENDING = 'data/PENDING'
+export const DATA_SUCCESS = 'data/SUCCESS'
+export const DATA_ERROR = 'data/ERROR'
 
 // INITIAL, PENDING, SUCCESS, ERROR 
 
@@ -13,22 +13,22 @@ const initialState = {
   }
 }
 
-const reducerPhone = (state = initialState, action) => {
+const reducerData = (state = initialState, action) => {
   const { payload, type } = action
 
   switch (type) {
-    case PHONE_INITIAL:
+    case DATA_INITIAL:
       return {
         ...state,
       }
 
-    case PHONE_PENDING:
+    case DATA_PENDING:
       return {
         ...state,
         status: 'PENDING'
       }
 
-    case PHONE_SUCCESS:
+    case DATA_SUCCESS:
       return {
         ...state,
         status: 'SUCCESS',
@@ -42,25 +42,25 @@ const reducerPhone = (state = initialState, action) => {
 }
 
 
-export const sendPhone = (formData) => (dispath) => {
+export const setData = (formData) => (dispath) => {
   dispath({
-    type: PHONE_PENDING
+    type: DATA_PENDING
   })
 
   const fetchData = async () => {
-    const response = await fetch(`${API_URL}/sendPhone`, {
+    const response = await fetch(`${API_URL}/setData`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({ ...formData }),
     })
 
     const body = await response.text()
     const parseBody = JSON.parse(body)
 
     dispath({
-      type: PHONE_SUCCESS,
+      type: DATA_SUCCESS,
       payload: parseBody.response.data
     })
 
@@ -73,4 +73,4 @@ export const sendPhone = (formData) => (dispath) => {
 
 
 
-export default reducerPhone
+export default reducerData

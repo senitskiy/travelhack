@@ -5,6 +5,7 @@ import { DataConfirm } from './DataConfirm'
 import { Registration } from './Registration'
 import { PhoneConfirm } from './PhoneConfirm'
 import { PhoneInput } from './PhoneInput'
+import { DataEnter } from './DataEnter'
 
 
-export { Auth, Choise, UserConfirm, DataConfirm, Registration, PhoneConfirm, PhoneInput }
+export { Auth, Choise, UserConfirm, DataConfirm, Registration, PhoneConfirm, PhoneInput, DataEnter }

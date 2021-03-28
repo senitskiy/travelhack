@@ -61,8 +61,6 @@ export const getAuth = (formData) => (dispath) => {
     const body = await response.text()
     const parseBody = JSON.parse(body)
 
-    console.log('parseBody', parseBody)
-
     dispath({
       type: AUTH_SUCCESS,
       payload: parseBody.response.data.auth

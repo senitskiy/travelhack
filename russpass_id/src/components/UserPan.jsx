@@ -12,7 +12,7 @@ export const UserPan = (props) => {
                     <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
                         <div className="text-3xl leading-none font-medium text-white">A</div>
                     </div>
-                    <div className="leading-snug">{firstname} {secondname}<br></br><span className="text-rp-text-muted text-sm">{email}</span></div>
+                    <div className="leading-tight">{firstname} {secondname}<br></br><span className="text-rp-text-muted text-sm">{email}</span></div>
                 </div>
             </div>
         </div>

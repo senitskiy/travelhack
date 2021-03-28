@@ -49,10 +49,10 @@ export const AuthDumb = ({ getAuthAction, auth }) => {
               <div className="mb-4">
                 <Button theme="w-full bg-rp-red text-white hover:bg-rp-red-hover focus:rp-red-focus" type="submit" label="Войти" />
               </div>
-              <div className="text-rp-text-muted mb-4 text-center" >или</div>
+              {/* <div className="text-rp-text-muted mb-4 text-center" >или</div>
               <div className="mb-4">
                 <Button theme="w-full border border-rp-input-border hover:bg-rp-light-gray " type="submit" label="Войти по номеру телефона" />
-              </div>
+              </div> */}
               <div className="text-center">У вас нет аккаунта? <Link to="/registration" className="underline">Зарегистрируйтесь</Link></div>
             </form>
           </Fragment>
