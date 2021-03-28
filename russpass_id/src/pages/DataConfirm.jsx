@@ -24,7 +24,7 @@ export const DataConfirmDumb = ({ auth: { login } }) => {
         checkbox4: false,
     })
 
-    const handleCheckboxChange = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target
 
         setCheckboxes({
@@ -44,7 +44,6 @@ export const DataConfirmDumb = ({ auth: { login } }) => {
         window.location.replace(`${callback}?code=${token}`)
     }
 
-
     return (
         <Fragment>
             <div className="text-2xl leading-10 mb-6">Доступ к данным</div>
@@ -58,10 +57,10 @@ export const DataConfirmDumb = ({ auth: { login } }) => {
                 <p>Сайту {partner} будут доступны следующие данные:</p>
             </div>
             <form onSubmit={handleChecboxSubmit}>
-                <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox1} name="checkbox1" label="Имя и фамилия" />
-                <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox1} name="checkbox2" label="Адрес электронной почты" />
-                <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox2} name="checkbox3" label="Телефон" />
-                <Checkbox onChange={handleCheckboxChange} value={checkboxes.checkbox3} name="checkbox4" label="Паспортные данные" />
+                <Checkbox onChange={handleChange} value={checkboxes.name} name="checkbox1" label="Имя и фамилия" />
+                <Checkbox onChange={handleChange} value={checkboxes.address} name="checkbox2" label="Адрес электронной почты" />
+                <Checkbox onChange={handleChange} value={checkboxes.phone} name="checkbox3" label="Телефон" />
+                <Checkbox onChange={handleChange} value={checkboxes.passport} name="checkbox4" label="Паспортные данные" />
                 <div className="mb-6"></div>
                 <Button theme="w-full bg-rp-red text-white hover:bg-rp-red-hover focus:rp-red-focus" type="submit" label="Продолжить" />
             </form>
