@@ -67,6 +67,41 @@ export const Auth = () => {
     <div className="App">
       {successAuth ?
         <Fragment>
+          <div className="text-2xl leading-10 mb-6">Экономим ваше время</div>
+          <div className="mb-8">
+            <p>На сайте <a href="#" className="underline font-medium">sitename.com</a> вам могут понадобиться паспортные даные. Добавьте их сейчас и они сохранятся в вашей учетной записи.</p>
+          </div>
+          <div className="flex justify-between" >
+          <Button theme="min-w-min bg-rp-red text-white hover:bg-rp-red-hover focus:rp-red-focus" type="submit" label="Да, хочу добавить!" />
+          <Button theme="min-w-min" type="submit" label="Не сейчас" />
+          </div>
+          <div className="mb-24"></div>
+
+
+          <div className="text-2xl leading-10 mb-6">Добавление данных</div>
+          {/* <div className="mb-12">
+            <p>На сайте <a href="#" className="underline font-medium">sitename.com</a> вам могут понадобиться паспортные даные. Добавьте их сейчас и они сохранятся в вашей учетной записи.</p>
+          </div> */}
+
+          {/* <div className="line-divider font-medium">
+            <div className=" text-xl">Данные паспорта:</div>
+          </div> */}
+          <div className=" text-xl mb-4">Данные паспорта:</div>
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporNumber" label="Серия и номер паспорта" />
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporDate" label="Дата выдачи" />
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporOrgan" label="Кем выдан" />
+          {/* <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporOrgan" label="Адрес регистрации" /> */}
+          <div className="mt-12">
+            <div className="line-divider font-medium">
+              <div className="">Адрес регистрации:</div>
+            </div>
+          </div>
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporOrgan" label="Область" />
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporOrgan" label="Населенный пункт" />
+          <Input theme="mb-4" type="text" onChange={handleChange} value={formData.login} name="passporOrgan" label="Адрес" />
+
+          <div className="mb-24"></div>
+
 
           <div className="text-2xl leading-10 mb-6">Подтверждение номера</div>
           <div className="border border-rp-input-border rounded-xl mb-2">

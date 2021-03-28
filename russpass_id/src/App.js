@@ -35,31 +35,31 @@ const App = () => {
 
   return (
     <div className="grid-wrapper">
-      <div className="grid-left-side">
+      <div className="grid-left-side bg-rp-light-gray">
 
       </div>
       <div className="auth-container"> 
-      <div className="auth-content">
-      <div className="auth-form-wrapper">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            {Boolean(token && auth.mail) ?
-              <Choise auth={auth} token={token} />
-              :
-              <Auth />
-            }
-          </Route>
-          <Route path="/identifier">
-            <Auth />
-          </Route>
-          <Route path="/registration">
-            <Registration />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-      </div>
-      </div>
+        <div className="auth-content">
+          <div className="auth-form-wrapper">
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/">
+                {Boolean(token && auth.mail) ?
+                  <Choise auth={auth} token={token} />
+                  :
+                  <Auth />
+                }
+              </Route>
+              <Route path="/identifier">
+                <Auth />
+              </Route>
+              <Route path="/registration">
+                <Registration />
+              </Route>
+            </Switch>
+          </BrowserRouter>
+          </div>
+        </div>
       </div>
     </div>)
 }
