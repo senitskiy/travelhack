@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import './callback.scss';
+import { useEffect } from 'react'
+import './callback.scss'
 
 const AUTH_URL = 'http://localhost:8080/auth'
 

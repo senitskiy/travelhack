@@ -6,8 +6,6 @@ import { Order } from './pages/Order'
 
 const App = () => {
 
-  
-
   return (
     <div>
       <BrowserRouter>

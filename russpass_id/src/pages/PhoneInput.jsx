@@ -1,12 +1,20 @@
-import { Fragment } from 'react'
-import { API_URL, POST_CONFIG } from '../constants'
+import { Fragment, useState } from 'react'
 import { Input, Button } from '../components'
+import { sendPhone } from '../modules/phone'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
+export const PhoneInputDumb = ({ sendPhoneAction, send }) => {
 
-export const PhoneInput = () => {
+    const [phone, setPhone] = useState('')
 
     const handleChange = (e) => {
-        console.log('e', e)
+        setPhone(e.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        sendPhoneAction(phone)
     }
 
     return (
@@ -60,3 +68,15 @@ export const PhoneInput = () => {
         </Fragment>
     )
 }
+
+
+const mapDispatchToProps = {
+    sendPhoneAction: sendPhone,
+}
+
+const mapStateToProps = ({ phone }) => ({
+    send: phone.data.send,
+})
+
+
+export const PhoneInput = connect(mapStateToProps, mapDispatchToProps)(PhoneInputDumb)
