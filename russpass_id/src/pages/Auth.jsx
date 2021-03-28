@@ -1,6 +1,6 @@
 import { useState, Fragment } from 'react'
-import { API_URL, POST_CONFIG } from '../constants'
 import { Input, Button } from '../components'
+
 import './auth.scss'
 
 
@@ -11,13 +11,7 @@ export const Auth = () => {
     password: ''
   })
 
-  const handleSubmit = async e => {
-    e.preventDefault()
-
-    const response = await fetch(`${API_URL}/auth`, POST_CONFIG(formData))
-    const body = await response.text()
-
-    // setSuccessAuth(Boolean(body))
+  const handleSubmit = () => {
 
   }
 

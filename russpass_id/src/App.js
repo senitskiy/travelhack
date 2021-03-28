@@ -1,32 +1,20 @@
 import { useEffect, useMemo } from 'react'
+import { connect } from 'react-redux'
 
 import { API_URL } from './constants'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Auth, UserConfirm, DataConfirm, Registration, PhoneConfirm, PhoneInput } from './pages/index'
 
+import { getAuth } from './modules/auth'
+
 import './App.scss'
 
-const App = () => {
+const App = ({ getAuthAction }) => {
 
   const token = useMemo(() => localStorage.getItem('token'), [])
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`${API_URL}/auth`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ token }),
-      }, [token])
-
-      const body = await response.text()
-      const parseBody = JSON.parse(body)
-
-      // setAuth(parseBody.response.data.auth)
-    }
-
-    fetchData()
+    getAuthAction(token)
   }, [token])
 
   return (
@@ -66,4 +54,10 @@ const App = () => {
     </div>)
 }
 
-export default App
+
+const mapDispatchToProps = {
+  getAuthAction: getAuth,
+}
+
+
+export default connect(null, mapDispatchToProps)(App)
