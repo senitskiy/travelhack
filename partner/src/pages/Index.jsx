@@ -66,10 +66,10 @@ export const Index = () => {
                     <button className="border border-gray-300 rounded-md py-2    w-full text-center mb-2" type="button">Facebook</button>
                 </div> */}
                             <div className="flex items-center justify-center">
-                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 mr-2 hover:bg-gray-50 outline-none" type="button" onClick={openWindow}>RP</button>
-                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 mr-2 hover:bg-gray-50 outline-none" type="button">G</button>
-                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 mr-2 hover:bg-gray-50 outline-none" type="button">FB</button>
-                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 hover:bg-gray-50 outline-none" type="button">VK</button>
+                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 mr-2 hover:bg-gray-50 outline-none focus:outline-none" type="button" onClick={openWindow}>RP</button>
+                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 mr-2 hover:bg-gray-50 outline-none focus:outline-none" type="button">G</button>
+                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 mr-2 hover:bg-gray-50 outline-none focus:outline-none" type="button">FB</button>
+                                <button className="border border-gray-200 w-16 h-14 rounded-md py-2 text-center mb-2 hover:bg-gray-50 outline-none focus:outline-none" type="button">VK</button>
                             </div>
                         </div>
                     }

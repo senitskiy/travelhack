@@ -1,7 +1,10 @@
 import { Auth } from './Auth'
 import { Choise } from './Choise'
-import { Confirmation } from './Confirmation'
+import { UserConfirm } from './UserConfirm'
+import { DataConfirm } from './DataConfirm'
 import { Registration } from './Registration'
+import { PhoneConfirm } from './PhoneConfirm'
+import { PhoneInput } from './PhoneInput'
 
 
-export { Auth, Choise, Confirmation, Registration }
+export { Auth, Choise, UserConfirm, DataConfirm, Registration, PhoneConfirm, PhoneInput }
