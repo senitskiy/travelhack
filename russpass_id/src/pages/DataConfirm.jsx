@@ -1,10 +1,6 @@
 import { Fragment, useState, useMemo } from "react"
-<<<<<<< HEAD
-import { Button, Checkbox, UserPan } from '../components'
-=======
 import { connect } from 'react-redux'
-import { Button, Checkbox } from '../components'
->>>>>>> bf095e6695a68af79e92c77dbd83242e792aa1ea
+import { Button, Checkbox, UserPan } from '../components'
 import { API_URL, POST_CONFIG } from '../constants'
 
 import './dataconfirm.scss'
