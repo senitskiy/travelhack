@@ -6,13 +6,32 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
+const mongoose = require('mongoose')
 const cors = require('cors')
 const config = require('../config')
-
+const { start } = require('repl')
+const mongoURI = 'mongodb+srv://admin:admin@cluster0.z4ifn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 const app = express()
 
 app.use(cors())
+
+app.use('/api/auth', require('./routes/auth.routes.js'))
+
+async function start1() {
+  try {
+    await mongoose.connect(mongoURI,{
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true            
+    });
+  } catch (e) {
+    console.log('Server error', e.message)
+    process.exit(1);
+  }
+}
+
+start1()
 // if (process.env.NODE_ENV !== 'production') {
   
 

@@ -1,4 +1,10 @@
 const passport = require('passport')
+const {Schema, model} = require('mongoose')
+
+const schema = new Schema ({
+
+  
+})
 
 function initUser (app) {
   // app.get('/', renderWelcome)
