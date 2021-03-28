@@ -15,6 +15,7 @@ export const DataConfirm = () => {
         checkbox1: false,
         checkbox2: false,
         checkbox3: false,
+        checkbox4: false,
     })
 
     const handleCheckboxChange = (e) => {

@@ -27,8 +27,20 @@ app.post('/auth', (req, res) => {
             data: {
                 auth: {
                     login: 'Пользователь Пользовательский',
-                    email: 'test@test.test'
+                    mail: 'test@test.test'
                 }
+            }
+        }
+    });
+})
+
+
+app.post('/sendPhone', (req, res) => {
+    return res.json({
+        status: 200,
+        response: {
+            data: {
+                send: true
             }
         }
     });
