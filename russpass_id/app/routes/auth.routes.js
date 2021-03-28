@@ -9,10 +9,11 @@ const {check, validationResult} = require('express-validator')
 
 router.post(
   '/register',
-  [
-    check('email','некоректный email').isEmail(),
-    check('password','Минимальная длина пароля 6 символов').isLength( options: { min:6 })
-  ], 
+  // [
+  //   check('email','некоректный email').isEmail(),
+  //   check('password','Минимальная длина пароля 6 символов')
+  //     .isLength( { min: 6 })
+  // ], 
   async (req, res) => {
   try {
     const errors = validationResult(req)
@@ -25,22 +26,22 @@ router.post(
     }
 
     const {email, password} = req.body
-    
-    const candidate await User.findOne({email})
+    console.log(email + " " + password)
+    const candidate = await User.findOne({email})
 
     if (candidate) {
       return res.status(400).json({message: 'Пользователь уже существует.'})
     }
 
-    const hashedPassword = await bcryptr.hash(password, 12);
-    const user = new User({email, password: hashedPassword});
+    const hashedPassword = await bcryptr.hash(password, 12)
+    const user = new User({email, password: hashedPassword})
 
     await user.save()
 
     res.status(201).json({ message: 'Пользователь создан.'})
-
+    console.log(email + " " + password)
   } catch (e) {
-    res.status(500).json({message: 'Oшибка'});
+    res.status(500).json({message: 'Oшибка ' + req})
   }
 })
 
@@ -84,6 +85,7 @@ router.post(
     res.json({ token, userId: user.id })
 
   } catch (e) {
+    console.log(req)
     res.status(500).json({message: 'Oшибка'}); 
   }
 })

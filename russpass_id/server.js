@@ -1,5 +1,5 @@
 const app = require('./app')
-const port = process.env.PORT || 8081
+// const port = process.env.PORT || 8081
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
@@ -18,17 +18,17 @@ const corsOptionsDelegate = function (req, callback) {
 app.use(cors())
 
 // Serve only the static files form the build directory
-app.use(express.static(__dirname + '/build'));
+// app.use(express.static(__dirname + '/build'));
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/build/index.html'));
-});
+// app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname + '/build/index.html'));
+// });
 
 
-app.listen(port, function (err) {
-  if (err) {
-    throw err
-  }
+// app.listen(port, function (err) {
+//   if (err) {
+//     throw err
+//   }
 
-  console.log(`server is listening on ${port}...`)
-})
+//   console.log(`server is listening on ${port}...`)
+// })

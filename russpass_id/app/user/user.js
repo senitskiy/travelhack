@@ -4,8 +4,8 @@ const {Schema, model, Types} = require('mongoose')
 const schema = new Schema ({
   email: {type: String, require: true, unique: true},
   password: {type: String, required: true}
-const {Schema, model, ObjectId} = require('mongoose')
-links: [{type: Types.ObjectId, ref: 'Link'}]
+// const {Schema, model, ObjectId} = require('mongoose')
+// links: [{type: Types.ObjectId, ref: 'Link'}]
   
 })
 
@@ -28,4 +28,5 @@ links: [{type: Types.ObjectId, ref: 'Link'}]
 //   })
 // }
 
-module.exports = model(name: 'User', shema)
+module.exports = model('User', schema)
+// module.exports = model(name: 'User', schema)

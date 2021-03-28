@@ -11,11 +11,14 @@ const cors = require('cors')
 const config = require('../config')
 const { start } = require('repl')
 const mongoURI = 'mongodb+srv://admin:admin@cluster0.z4ifn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-
+const port = process.env.PORT || 8081
 
 const app = express()
 
 app.use(cors())
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api/auth', require('./routes/auth.routes.js'))
 
@@ -25,7 +28,15 @@ async function start1() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true            
-    });
+    })
+    app.listen(port, function (err) {
+      if (err) {
+        throw err
+      }
+    
+      console.log(`server is listening on ${port}...`)
+    })
+
   } catch (e) {
     console.log('Server error', e.message)
     process.exit(1);
