@@ -1,11 +1,7 @@
 import { Fragment, useState } from 'react'
-import { Button } from '../components'
-<<<<<<< HEAD
-import { UserPan } from '../components'
-=======
+import { Button, UserPan } from '../components'
 import { connect } from 'react-redux'
 import { Link, Redirect } from 'react-router-dom'
->>>>>>> bf095e6695a68af79e92c77dbd83242e792aa1ea
 
 import './userconfirm.scss';
 

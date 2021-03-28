@@ -22,7 +22,7 @@ const App = ({ getAuthAction }) => {
 
   return (
     <div className="grid-wrapper">
-      <div className="grid-left-side bg-rp-peach">
+      <div  style={{ backgroundImage: "url(img/cover_img.png)" }}className="grid-left-side bg-rp-peach" >
         <div className="h-screen w-full relative">
           <div className="ml-12 mt-12 w-28 mb-20" ><img src="img/rp_h_logo.svg"></img></div>
 
