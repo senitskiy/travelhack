@@ -12,6 +12,7 @@ const config = require('../config')
 const { start } = require('repl')
 const mongoURI = 'mongodb+srv://admin:admin@cluster0.z4ifn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
+
 const app = express()
 
 app.use(cors())
