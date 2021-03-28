@@ -22,8 +22,17 @@ const App = ({ getAuthAction }) => {
 
   return (
     <div className="grid-wrapper">
-      <div className="grid-left-side">
+      <div className="grid-left-side bg-rp-peach">
+        <div className="h-screen w-full relative">
+          <div className="ml-12 mt-12 w-28 mb-20" ><img src="img/rp_h_logo.svg"></img></div>
 
+          <div className="ml-12 text-xl font-semibold text-white">
+          <span className="text-rp-red text-sm pr-2">#</span>вдохновляйся<br></br>
+          <span className="text-rp-red text-sm pr-2">#</span>планируй<br></br>
+          <span className="text-rp-red text-sm pr-2">#</span>делись<br></br>
+          <span className="text-rp-red text-sm pr-2">#</span>покупай
+          </div>
+        </div>
       </div>
       <div className="auth-container">
         <div className="auth-content">

@@ -14,7 +14,7 @@ const App = () => {
             <Index />
           </Route>
           <Route path="/order">
-            <Index />
+            {/* <Index /> */}
             <Order />
           </Route>
           <Route path="/callback">

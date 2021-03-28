@@ -58,7 +58,7 @@ body {
 
   .grid-left-side {
     width: 35%;
-    background-color: gray;
+    // background-color: gray;
   }
 
   .auth-container {
@@ -75,4 +75,23 @@ body {
   .auth-form-wrapper {
     max-width: 384px;
   } 
+}
+
+.line-divider {
+  @apply relative;
+  @apply mt-8;
+  @apply mb-8;
+  @apply border-b;
+  @apply border-rp-input-border;
+  @apply flex;
+  // @apply justify-center;
+  @apply items-center;
+  height: 1px;
+
+  div {
+    @apply bg-white;
+    @apply absolute;
+    @apply pr-2;
+    @apply py-1;
+  }
 }

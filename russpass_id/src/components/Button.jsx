@@ -5,7 +5,7 @@ export const Button = (props) => {
 
     return (
         <div>
-            <button onClick={onClick} type={type} className={`py-3.5 px-8 rounded-lg ${theme}`}>{label}</button>
+            <button onClick={onClick} type={type} className={`py-3.5 px-8 rounded-lg font-medium focus:outline-none ${theme}`}>{label}</button>
         </div>
     )
 }

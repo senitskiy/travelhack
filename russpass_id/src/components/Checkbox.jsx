@@ -5,7 +5,7 @@ export const Checkbox = (props) => {
 
     return (
         <div className="checkbox-group relative">
-            <input onChange={onChange} id={name} name={name} type="checkbox" value={value} classNme="absolute" checked={condition}/>
+            <input onChange={onChange} id={name} name={name} type="checkbox" value={value} checked='checked'/>
             <label for={name}>{label}
             </label>
         </div>

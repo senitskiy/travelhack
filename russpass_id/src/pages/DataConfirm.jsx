@@ -1,6 +1,10 @@
 import { Fragment, useState, useMemo } from "react"
+<<<<<<< HEAD
+import { Button, Checkbox, UserPan } from '../components'
+=======
 import { connect } from 'react-redux'
 import { Button, Checkbox } from '../components'
+>>>>>>> bf095e6695a68af79e92c77dbd83242e792aa1ea
 import { API_URL, POST_CONFIG } from '../constants'
 
 import './dataconfirm.scss'
@@ -47,12 +51,10 @@ export const DataConfirmDumb = ({ auth: { login } }) => {
     return (
         <Fragment>
             <div className="text-2xl leading-10 mb-6">Доступ к данным</div>
-            <div className="mb-4 flex items-center">
-                <div className="rounded rounded-full h-12 w-12 bg-rp-text flex items-center justify-center mr-4">
-                    <div className="text-3xl leading-none font-medium text-white">A</div>
-                </div>
-                <div className="leading-snug">{login}</div>
+            <div className="mb-4">
+            <UserPan firstname="Александр" secondname="Александровский" email="alexandovsky@gmail.com"/>
             </div>
+            <div className="leading-snug">{login}</div>
             <div className="mb-2">
                 <p>Сайту {partner} будут доступны следующие данные:</p>
             </div>

@@ -10,8 +10,10 @@ module.exports = {
         'rp-text': '#262626',
         'rp-text-muted': '#898989',
         'rp-light-gray': '#F0F0F0',
+        'rp-lighter-gray': '#F4F4F4',
         'rp-input-border': '#E4E4E4',
         'rp-input-border-dark': '#b2b2b2',
+        'rp-peach': '#F8F3EF',
       }
     },
   },
